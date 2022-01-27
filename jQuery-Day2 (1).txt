@@ -1,0 +1,64 @@
+Effects -> 
+show(speed,callback)
+hide()
+toggle()
+
+show("slow",callback)
+slow,fast or milsesonds -> 5000
+slow-> 600ms
+fast->200ms
+normal -> 400ms
+
+Fade effects -
+fadeIn(speed,callback) -> display hidden  element with fade effect
+fadeOut() -> hide element with fade effect
+fadeToggle()
+fadeTo() -> hide element with some opacity
+
+slideDown()
+slideUp()
+slideToggle()
+
+Method Chaining ->
+
+
+Add and remove elements -
+To Add -append() and prepend(),after() and before()
+	append() - insert content at the end of the element
+	prepend() - insert content at the begining of the element
+	after - insert content  after the element
+	before - insert content before the element
+	
+To remove - remove() and empty()
+remove() -> remove the selected element and its child element as well
+empty() -> remove the child element from the selected element
+
+=========================
+
+img tag src attribute value change at run time -> 
+attr() => To assign a attribute to the tag
+
+$(selector).attr(attribute,value)
+$(selector).attr({attribute:value,attribute:value})
+
+
+
+document.getElementById("msg").innerHTML=""
+document.getElementById("msg").style.backgroundColor="red"
+
+$(selector).css("propertyname","value")
+$(selector).css({"propertyname":"value","propertyname":"value"})
+
+============================================
+Arrow function binding with this -
+with arrow functions there are no binding of this.
+
+In regular functions the this keyword represented the object that called the function, which could be the window, the document, a button or whatever.
+
+With arrow functions the this keyword always represents the object that defined the arrow function.
+
+================================================================
+Animation ->
+
+
+

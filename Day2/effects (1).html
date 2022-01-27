@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/bootstrap.css'>
+    <script src='js/jquery-3.6.0.js'></script>
+    <style>
+        .applyclass{
+            border: 2px dotted greenyellow;
+            color:hotpink;
+            background-color: lightseagreen;
+            height: 200px;
+        }
+        .abc{
+            font-size: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container m-5">
+    <img src="nature.jpg" id="img1" style="width: 50%; height: 20%;"><br>
+    <p id="para1" style="height: 200px;background-color: brown;">mouseenter event and mouseleave event</p>
+    <!-- <button type="button" id="toggle">Show/Hide Image</button> -->
+    <!-- <button type="button" id="fade">Fade Image</button> -->
+
+        <!-- <button type="button" id="slideup" class="btn btn-primary">Slideup</button>
+        <button type="button" id="slidedown" class="btn btn-danger">Slidedown</button>
+        <button type="button" id="slidetogglw" class="btn btn-info">Slidetoggle</button>
+        <button type="button" id="stop" class="btn btn-dark">Stop</button><br>
+        <div id="div1" style="height: 200px;" class="bg-warning">this is an div tag</div> -->
+
+            <!-- <p id="method">This is example of method chaining</p><br> -->
+            <!-- <button id="chainging">Click Me</button> -->
+
+            <button type="button" id="addclass" class="btn btn-danger">Add Class</button>
+            <button type="button" id="removeclass" class="btn btn-info">Remove Class</button>
+            <button type="button" id="toggleclass" class="btn btn-dark">Toggle Class</button><br>
+            <p id="method">This is example of classes</p><br>
+
+</div>
+    <script>
+        var original_fs=$("#para1").css("font-size");
+        var text=$("#para1").html()
+                  $(document).ready(()=>{
+                $("#img1").mouseenter(()=>{
+                    $("#para1").html("hello")
+                    $("#para1").css("font-size","30px")
+                })
+                $("#img1").mouseleave(()=>{
+                        $("#para1").html(text)
+                        $("#para1").css("font-size",original_fs)
+                })
+
+                // $("#img1").click(function(){
+                //     $(this).hide(6000,()=>{
+                //         // $("#img1").attr("src","images/c5.jpg")
+                //         $("#img1").attr({"src":"images/c5.jpg","height":"300px"})
+                //         // $("#img1").css("border","2px solid blue")
+                //         $("#img1").css({"border":"3px solid yellow","border-radius":"10px"})
+                //         $("#img1").show(5000)
+                //     })
+                // })
+
+                    // $("#toggle").click(()=>{
+                    //     $("#img1").toggle(3000)
+                    // })
+
+                        // $("#fade").click(()=>{
+                        //     // $("#img1").fadeOut(5000,()=>{
+                        //     //     // alert("image fade out")
+                        //     //     $("#img1").fadeIn(7000)
+                        //     // })
+                        //     // $("#img1").fadeToggle(3000)
+                        //         $("#img1").fadeTo(4000,1)
+                        //         // opacity =-> 0 to 1
+                        //         // 0 => complete hide
+                        //         // 1=> complete show
+                        //         // .5,.2 etc -> transparency level
+                        // })
+
+                            // $("#slideup").click(()=>{
+                            //     $("#div1").slideUp(4000)
+                            // })
+                            // $("#slidedown").click(()=>{
+                            //     $("#div1").slideDown(4000)
+                            // })
+                            // $("#slidetoggle").click(()=>{
+                            //     $("#div1").slideToggle(4000)
+                            // })
+                            // $("#stop").click(()=>{
+                            //     $("#div1").stop()
+                            // })
+
+                            // $("#chaining").click(()=>{
+                            //     $("#method").css({"color":"red","height":"200px","background":"blue"})
+                            //                 .slideUp(4000)
+                            //                 .delay(5000)
+                            //                 .slideDown(3000)
+                            // })
+
+                            // $("#addclass").click(()=>{
+                            //     $("#method").addClass("applyclass abc")
+                            // })
+                            // $("#removeclass").click(()=>{
+                            //     $("#method").removeClass("applyclass")
+                            // })
+                            // $("#toggleclass").click(()=>{
+                            //     $("#method").toggleClass("applyclass")
+                            // })
+
+            })
+    </script>
+</body>
+</html>

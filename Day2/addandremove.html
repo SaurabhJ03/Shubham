@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/bootstrap.css'>
+    <script src='js/jquery-3.6.0.js'></script>
+</head>
+<body>
+    <!-- <p id="element" style="border: 2px solid blueviolet;width:300px;margin-left: 200px;">This is para tag</p><br>
+    <button type="button" class="btn btn-primary" id="append">Append</button>
+    <button type="button" class="btn btn-danger" id="prepend">Prepend</button>
+    <button type="button" class="btn btn-info" id="after">After</button>
+    <button type="button" class="btn btn-warning" id="before">Before</button> -->
+    <br><br>
+    <div id="div1" style="border: 2px solid blue;height:200px" class="bg-danger">This is div tag
+    <h1>Heading</h1><br>
+    </div><br>
+    <button type="button" class="btn btn-primary" id="remove">Remove</button>
+    <button type="button" class="btn btn-primary" id="empty">Empty</button>
+    <script>
+        $(document).ready(()=>{
+            // $("#append").click(()=>{$("#element").append("this is appended text")})
+            // $("#prepend").click(()=>{$("#element").prepend("this is prepended text")})
+            // $("#after").click(()=>{$("#element").after("after paragraph added")})
+            // $("#before").click(()=>{$("#element").before("before paragraph added")})
+
+            $("#remove").click(()=>{$("#div1").remove()})
+            $("#empty").click(()=>{$("#div1").empty()})
+
+
+        })
+    </script>
+</body>
+</html>

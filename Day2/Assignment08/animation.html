@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Q3</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/bootstrap.css'>
+    <script src='js/jquery-3.6.0.js'></script>
+</head>
+<body>
+    <div id="div1" style="border:thin;">
+        <div id="div2" style="border: solid;border-color: lightgrey; background-color: lightgreen;margin-top: 2%;">
+            <p id="label1" style="text-align: center;">Click to slide up panel!</p>
+        </div>
+        <div id="div3" style="height: 200px; background-color: lightgreen;">
+        <p id="label2" style="text-align: center;"><br><br><br>JQuery</p>
+        </div>
+    </div>
+
+<script>
+     
+     $(document).ready(()=>{
+         $("#div2").click(()=>{
+
+
+    
+        $("#div3").slideToggle(2000)
+
+    })
+
+     })
+
+
+
+
+
+</script>
+</body>
+</html>

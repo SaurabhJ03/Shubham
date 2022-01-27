@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Question_04</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+  <link rel='stylesheet' type='text/css' media='screen' href='css/bootstrap.css'>
+  <script src='js/jquery-3.6.0.js'></script>
+  <script src="js/jquery.validate.js"></script>
+  <script src="js/additional-methods.js"></script>
+  <style>
+      .error{color:red}
+  </style>
+ <style>
+   td, th{
+     padding: 10px;
+   }
+   button{
+     background-color: blue;
+     color: blanchedalmond;
+     height: 25px;
+     width: 100px;
+   }
+   div{
+       background-color: aqua;
+      float: left;
+   }
+ </style>
+</head>
+<body>
+  <form id="frm">
+<div>
+  <h2>Registration Page</h2>
+  <table>
+    <thead>
+      <th></th>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><label>User Name </label></td>
+        <td><input type="text" name="uname" pattern="[a-zA-Z0-9]+"></td>
+      </tr>
+      <tr>
+        <td><label>First Name </label></td>
+        <td><input type="text" name="fname" pattern="[a-zA-Z]+"></td>
+      </tr>
+      <tr>
+        <td><label>Last Name </label></td>
+        <td><input type="text" name="lname" pattern="[a-zA-Z]+"></td>
+      </tr>
+      <tr>
+        <td><label>Password </label></td>
+        <td><input type="password" name="pwd" id="pwd"></td>
+      </tr>
+      <tr>
+        <td><label>Confirm Password </label></td>
+        <td><input type="password" name="cpwd"></td>
+      </tr>
+      <tr>
+        <td><label>Email </label></td>
+        <td><input type="text" name="email"></td>
+      </tr>
+      <tr>
+        <td><label>Gender </label></td>
+        <td><input type="radio" id="male"name="gender">Male 
+          <input type="radio" id="female" name="gender">Female<span id="errorToShow"></span></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="ch" id="ch">I accept Terms and Conditions
+          <br><span id="cherror"></span></td>
+        <td>
+          <input type="submit" class="btn btn-success" id="submit" value="Register" disabled="true" >
+          <button type="submit" id="print" class="btn btn-primary" disabled="true" style="height: 20%;">Print</button>
+      </td>   
+      </tr>
+    </tbody>
+  </table>
+</div>
+</form>
+<script>
+
+$(document).ready(()=>{
+            $.validator.addMethod("emailonly",function(value,element){
+               return this.optional(element) || /^([a-zA-Z_\#\$]+)@([a-zA-Z]+).([a-zA-Z]{2,3})$/.test(value)
+            },"Invalid EmailId")
+
+            $("#frm").validate({
+                    rules:{
+                             uname:{required:true,lettersonly:true},
+                             fname:{required:true,lettersonly:true},
+                             lname:{required:true,lettersonly:true},
+                             pwd:{required:true,minlength:5,maxlength:10},
+                             cpwd:{required:true,equalTo:'#pwd'},
+                             email:{emailonly:true},
+                            // mobile:{digits:true,minlength:10,maxlength:10},
+                             gender:{required:true},
+                            //  ch:{required:true}
+
+                    },
+                    messages:{
+                         uname:{required:"Username is required"},
+                         fname:{required:"Firstname is required"},
+                         lname:{required:"Lastname is required"},
+                         pwd:{required:"password is required",minlength:"min 5 char",maxlength:"max 10 char only"},
+                         cpwd:{equalTo:"Password must be same"},
+                        //  ch:{required:"Accept the terms and conditions"}
+                        // mobile:{minlength:"only 10 digits",maxlength:"only 10 digits"}
+                    },
+                    errorPlacement:(error,element)=>{
+                        if(element.attr("name")=="gender"){
+                            error.appendTo("#errorToShow")
+                        }
+                        else
+                        {
+                            error.insertAfter(element)
+                        }
+                    }
+            })
+        
+          $("#ch").click(()=>{
+            if($("#ch").is(":checked")){
+                $("#submit").removeAttr("disabled")
+            }
+            else
+            $("#submit").attr("disabled","true")
+            
+        })
+           
+        $("#ch").click(()=>{
+            if($("#ch").is(":checked")){
+                $("#print").removeAttr("disabled")
+            }
+            else
+            $("#print").attr("disabled","true")
+            
+        })
+
+        $("#print").click(()=>{
+          window.print();
+        })
+      })
+</script>
+</body>
+</html>

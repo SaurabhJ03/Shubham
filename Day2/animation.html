@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/bootstrap.css'>
+    <script src='js/jquery-3.6.0.js'></script>
+</head>
+<body>
+    <div class="container m-5">
+    <button type="button" id="animation" class="btn btn-primary">Animation</button><br><br><br>
+    <div id="applyanimation"  style="position:relative;height:100px;background-color: burlywood;width:250px">
+        this is  div tag</div>
+    </div>
+<script>
+$(document).ready(()=> {
+        $("#animation").click(()=>{
+            $("#applyanimation").animate({left:'250px',height:"150px",width:'+=250px'},5000)
+            $("#applyanimation").animate({fontSize:'30px'},4000)
+        })
+       
+})
+</script>
+</body>
+</html>
